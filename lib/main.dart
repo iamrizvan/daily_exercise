@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import './widget/category.dart';
 import './widget/bottom_nav_bar.dart';
 import './screens/details_screen.dart';
+import './widget/search_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -67,20 +68,7 @@ class HomeScreen extends StatelessWidget {
                         style: Theme.of(context).textTheme.display1.copyWith(
                             fontSize: 25, fontWeight: FontWeight.w400),
                       ),
-                      Container(
-                        margin: EdgeInsets.symmetric(vertical: 15),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(30)),
-                        child: TextField(
-                          decoration: InputDecoration(
-                              hintText: "Search",
-                              icon: SvgPicture.asset("assets/icons/search.svg"),
-                              border: InputBorder.none),
-                        ),
-                      ),
+                      Searchbar(),
                       Expanded(
                           child: GridView.count(
                         crossAxisCount: 2,
@@ -137,3 +125,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
